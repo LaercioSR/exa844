@@ -7,27 +7,27 @@
 		<Endereco>
 			<email>cordax@gmail.com</email>
 		</Endereco>
-	</Cliente>	
-  <Cliente id="C02">
+	</Cliente>
+	<Cliente id="C02">
 		<nome> Marcone </nome>
 		<cpf> 011.333.444-10 </cpf>
 		<Endereco>
 			<email> marcone@gaymail.com </email>
 		</Endereco>
 	</Cliente>
-  <Cliente id="C03">
+	<Cliente id="C03">
 		<nome> nomeDoCliente </nome>
 		<cpf> numeroDoCpf </cpf>
 		<Endereco>
 			<email> emailDoCliente </email>
 		</Endereco>
-	</Cliente>	
+	</Cliente>
 	<Conta titular="C01">
 		<numero>0101</numero>
 		<tipo>poupanca</tipo>
 		<saldo>1,20</saldo>
 	</Conta>
-  <Conta titular="C01">
+	<Conta titular="C01">
 		<numero> 0102 </numero>
 		<tipo> corrente </tipo>
 		<saldo> -85,00 </saldo>
@@ -41,5 +41,5 @@
 		<numero> 010203 </numero>
 		<tipo> conjunta </tipo>
 		<saldo> 500 </saldo>
-	</Conta>	
+	</Conta>
 </Banco>
