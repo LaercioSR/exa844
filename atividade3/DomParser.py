@@ -1,8 +1,25 @@
 from xml.dom.minidom import parse
+import time
 
-BancoDocument = parse('Banco.xml')
+start = time.time()
+osmDocument = parse('map.osm')
 
 print("Starting DOM Parser...")
-for c in BancoDocument.getElementsByTagName("Cliente"):	
-	print("Nome:", c.getElementsByTagName("nome")[0].firstChild.data)
-	print("id: ", c.getAttribute("id"))
+for node in osmDocument.getElementsByTagName("node"):
+    typeNode = None
+    nameNode = ""
+    for tag in node.getElementsByTagName("tag"):
+        if tag.getAttribute("k") == "amenity":
+            typeNode = tag.getAttribute("v")
+        elif tag.getAttribute("k") == "name":
+            nameNode = tag.getAttribute("v")
+
+    if typeNode:
+        print("Nome:", nameNode)
+        print("Tipo:", typeNode)
+        print("Latitude:", node.getAttribute("lat"))
+        print("Longitude:", node.getAttribute("lon"))
+        print("\n")
+
+end = time.time()
+print(end - start, "s")
