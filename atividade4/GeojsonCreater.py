@@ -47,7 +47,7 @@ Handler = Listener(geojson)
 parser.setContentHandler(Handler)
 
 print("Starting SAX Parser...")
-parser.parse("map.osm")
+parser.parse("../assets/map.osm")
 
 jsonStr = json.dumps(geojson, indent=2, ensure_ascii=False)
 print(jsonStr)

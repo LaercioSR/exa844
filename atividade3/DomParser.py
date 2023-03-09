@@ -2,7 +2,7 @@ from xml.dom.minidom import parse
 import time
 
 start = time.time()
-osmDocument = parse('map.osm')
+osmDocument = parse('../assets/map.osm')
 
 print("Starting DOM Parser...")
 for node in osmDocument.getElementsByTagName("node"):

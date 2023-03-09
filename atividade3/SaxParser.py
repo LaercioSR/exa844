@@ -37,7 +37,7 @@ Handler = Listener()
 parser.setContentHandler(Handler)
 
 print("Starting SAX Parser...")
-parser.parse("map.osm")
+parser.parse("../assets/map.osm")
 
 end = time.time()
 print(end - start, "s")
