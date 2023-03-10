@@ -25,9 +25,39 @@ class MyHTMLParser(HTMLParser):
         self.currentData += data
 
 
-page = urllib.request.urlopen('https://laerciosr.github.io/exa844/')
-parser = MyHTMLParser()
-parser.feed(str(page.read().decode('utf-8')))
+pageFile = open("index.html", "w")
+pageFile.write("""
+  <!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>EXA844 - Laercio - Classwork 5</title>
+    </head>
+    <body>
+""")
 
-print("Título:", parser.title)
-print("Imagem:", parser.image)
+seedsFile = open("seeds.txt", "r")
+seeds = seedsFile.readlines()
+
+for seed in seeds:
+    try:
+        page = urllib.request.urlopen(seed)
+    except:
+        continue
+    parser = MyHTMLParser()
+    parser.feed(str(page.read().decode('utf-8')))
+
+    if "https://" in parser.image:
+        print(seed[:-1])
+
+        pageFile.write("      <h2>{}</h2>\n".format(seed[:-1]))
+        pageFile.write("      <h3>{}</h3>\n".format(parser.title))
+        pageFile.write(
+            '      <img src="{}"/><br/><br/>\n\n'.format(parser.image))
+
+pageFile.write("""
+    </body>
+  </html>
+""")

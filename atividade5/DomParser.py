@@ -1,7 +1,8 @@
 import urllib.request
 from bs4 import BeautifulSoup
 
-page = urllib.request.urlopen('https://laerciosr.github.io/exa844/')
+page = urllib.request.urlopen(
+    'https://laerciosr.github.io/exa844/atividade1/index.html')
 
 html = str(page.read().decode('utf-8'))
 
