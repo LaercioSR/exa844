@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Create Message</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <h1 align="center">Message Form</h1>
+    <hr />
+    <br />
+    <form
+      method="POST"
+      action="http://localhost:8000/cgi-bin/blog.py"
+      align="center"
+    >
+      Author: <br />
+      <input type="text" size="64" name="author" /><br /><br />
+      Message: <br />
+      <textarea rows="3" cols="64" name="message"></textarea><br /><br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>
