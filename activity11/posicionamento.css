@@ -1,0 +1,9 @@
+.esqcima, .dircima, .esqbaixo, .dirbaixo{ 
+ position: absolute;
+ text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 20%;
+ height: 20%;  
+}
